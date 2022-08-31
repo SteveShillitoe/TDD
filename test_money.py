@@ -1,18 +1,6 @@
 import unittest
-
-class Money:
-    def __eq__(self, other):
-        return self.amount == other.amount and self.currency == other.currency
-
-    def __init__(self, amount, currency):
-        self.amount = amount
-        self.currency = currency
-
-    def times(self, multiplier):
-        return Money(self.amount*multiplier, self.currency)
-
-    def divide(self, divisor):
-        return Money(self.amout/divisor, self.currency)
+from money import Money
+from portfolio import Portfolio
 
 
 class TestMoney(unittest.TestCase):
@@ -32,9 +20,20 @@ class TestMoney(unittest.TestCase):
         actualMoneyAfterDivision = originalMoney.divide(4)
         expectedMoneyAfterDivision = Money(1000.5, "KRW")
         self.assertEqual(expectedMoneyAfterDivision.amount, 
-                         actualMoneyAfterDivison.amount)
+                         actualMoneyAfterDivision.amount)
         self.assertEqual(expectedMoneyAfterDivision.currency, 
-                         actualMoneyAfterDivison.currency)
+                         actualMoneyAfterDivision.currency)
+
+
+    def testAddition(self):
+        fiveDollars = Money(5, "USD")
+        tenDollars = Money(10, "USD")
+        fifteenDollars = Money(15, "USD")
+        portfolio = Portfolio()
+        portfolio.add(fiveDollars, tenDollars)
+        self.assertEqual(fifteenDollars, portfolio.evaluate("USD"))
+
+
 
 
 if __name__ == '__main__':
