@@ -15,7 +15,7 @@ on:
 jobs:
   build:
    name:Build
-       strategy:
+   strategy:
         matrix:
           python-version:[3.9.x,3.10.x]
           platform:[windows-version]
