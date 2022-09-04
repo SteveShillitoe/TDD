@@ -1,3 +1,5 @@
+"""This module contains automated unit tests"""
+
 import unittest
 from money import Money
 from portfolio import Portfolio
