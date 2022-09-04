@@ -14,6 +14,7 @@
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
     <UnitTestRootDirectory>.</UnitTestRootDirectory>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +25,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TDD.py" />
+    <Compile Include="bank.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="money.py" />
+    <Compile Include="portfolio.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test_money.py">
       <SubType>Code</SubType>
     </Compile>
