@@ -17,8 +17,8 @@ jobs:
    name: Build
    strategy:
         matrix:
-          python-version:[3.9.x,3.10.x]
-          platform:[windows-version]
+          python-version: [3.9.x,3.10.x]
+          platform: [windows-latest]
    runs-on: ${{matrix.platform}}
    steps:
    - name: Set up Python ${{matrix.node-version}}
